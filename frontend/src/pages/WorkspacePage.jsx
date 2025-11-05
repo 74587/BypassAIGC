@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { 
-  FileText, Settings, History, LogOut, Play, 
+  FileText, History, LogOut, Play, 
   Users, Clock, AlertCircle, CheckCircle, Trash2, Info 
 } from 'lucide-react';
 import { optimizationAPI } from '../api';
@@ -13,7 +13,6 @@ const WorkspacePage = () => {
   const [sessions, setSessions] = useState([]);
   const [queueStatus, setQueueStatus] = useState(null);
   const [activeSession, setActiveSession] = useState(null);
-  const [showSettings, setShowSettings] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoadingSessions, setIsLoadingSessions] = useState(false);
   const navigate = useNavigate();
@@ -225,13 +224,6 @@ const WorkspacePage = () => {
                   )}
                 </div>
               )}
-              
-              <button
-                onClick={() => setShowSettings(!showSettings)}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              >
-                <Settings className="w-5 h-5 text-gray-600" />
-              </button>
               
               <button
                 onClick={handleLogout}

@@ -300,12 +300,12 @@ const SessionMonitor = ({ adminToken }) => {
                            session.processing_mode}
                         </span>
                       )}
-                      {session.original_char_count && (
+                      {session.original_char_count != null && (
                         <span className="px-2 py-1 text-xs font-medium rounded bg-gray-100 text-gray-700">
                           {session.original_char_count.toLocaleString()} 字符
                         </span>
                       )}
-                      {viewMode === 'history' && session.polished_char_count && (
+                      {viewMode === 'history' && session.polished_char_count != null && (
                         <span className="px-2 py-1 text-xs font-medium rounded bg-green-100 text-green-700">
                           润色后 {session.polished_char_count.toLocaleString()} 字符
                         </span>
@@ -419,19 +419,19 @@ const SessionMonitor = ({ adminToken }) => {
 
                     {/* 字符统计信息 */}
                     <div className="grid grid-cols-3 gap-3 mb-3">
-                      {session.original_char_count && (
+                      {session.original_char_count != null && (
                         <div className="bg-blue-50 rounded-lg p-2">
                           <p className="text-xs text-blue-600 mb-1">原文字符</p>
                           <p className="text-lg font-bold text-blue-700">{session.original_char_count.toLocaleString()}</p>
                         </div>
                       )}
-                      {session.polished_char_count && (
+                      {session.polished_char_count != null && (
                         <div className="bg-green-50 rounded-lg p-2">
                           <p className="text-xs text-green-600 mb-1">润色字符</p>
                           <p className="text-lg font-bold text-green-700">{session.polished_char_count.toLocaleString()}</p>
                         </div>
                       )}
-                      {session.enhanced_char_count && (
+                      {session.enhanced_char_count != null && (
                         <div className="bg-purple-50 rounded-lg p-2">
                           <p className="text-xs text-purple-600 mb-1">增强字符</p>
                           <p className="text-lg font-bold text-purple-700">{session.enhanced_char_count.toLocaleString()}</p>
