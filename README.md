@@ -256,7 +256,8 @@ A: 检查 API Key 和 Base URL 配置是否正确
 
 ## License
 未经允许禁止商业使用
-MIT License
+Creative Commons (CC BY-NC-SA 4.0)
+
 
 
 
