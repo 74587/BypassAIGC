@@ -223,7 +223,7 @@ def count_text_length(text: str) -> int:
     
     对于中文文本，统计汉字数量
     对于英文文本，统计字母数量
-    对于混合文本，同时统计汉字和字母
+    对于混合文本，优先统计汉字数量
     """
     chinese_pattern = re.compile(r'[\u4e00-\u9fff]')
     chinese_count = len(chinese_pattern.findall(text))
