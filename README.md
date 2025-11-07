@@ -259,6 +259,7 @@ A: 检查 API Key 和 Base URL 配置是否正确
 
 Creative Commons (CC BY-NC-SA 4.0)
 
+[![Star History Chart](https://api.star-history.com/svg?repos=chi111i/BypassAIGC&type=Date)](https://star-history.com/#chi111i/BypassAIGC)
 
 
 
