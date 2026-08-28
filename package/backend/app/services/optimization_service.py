@@ -456,35 +456,7 @@ class OptimizationService:
             # 保留最近的2-3条消息作为风格参考
             recent_messages = history[-3:] if len(history) > 3 else history
             
-            # 选择合适的压缩提示词
-            if stage == "emotion_polish":
-                compression_prompt = """你是一个专业的文本摘要助手。请压缩以下历史处理内容，提取关键风格特征：
-
-1. 总结文本的表达风格和语言特点
-2. 提取关键的修改方向和处理模式
-3. 保留重要的词汇使用倾向
-4. 删除重复的内容和冗余表述
-
-要求：
-- 压缩后内容不超过原内容的30%
-- 只输出压缩后的摘要，不要添加任何解释和注释
-
-历史处理内容："""
-            else:
-                compression_prompt = """你是一个专业的学术文本摘要助手。请压缩以下历史处理内容，提取关键信息：
-
-1. 保留论文的主要术语、核心概念和关键数据
-2. 总结已处理段落的主题和要点
-3. 提取处理风格和改进方向的关键特征
-4. 删除重复内容和冗余表述
-
-要求：
-- 压缩后内容不超过原内容的30%
-- 保持学术性和专业性
-- 只输出压缩后的摘要文本，不要添加任何解释和注释
-
-
-历史处理内容："""
+            compression_prompt = get_compression_prompt(stage)
 
             compressed_summary = await self.compression_service.compress_history(
                 recent_messages, 

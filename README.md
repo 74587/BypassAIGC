@@ -1,5 +1,9 @@
 ## AI 学术写作助手
 
+[![GitHub stars](https://img.shields.io/github/stars/chi111i/BypassAIGC?style=flat)](https://github.com/chi111i/BypassAIGC/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/chi111i/BypassAIGC?style=flat)](https://github.com/chi111i/BypassAIGC/network/members)
+[![Release](https://img.shields.io/github/v/release/chi111i/BypassAIGC)](https://github.com/chi111i/BypassAIGC/releases)
+
 专业论文润色与语言优化系统
 <img width="2080" height="1361" alt="图片" src="https://github.com/user-attachments/assets/c11abdc9-4bc4-4d61-bea0-13071dba01cd" />
 
@@ -218,32 +222,8 @@ git push origin v1.0.0
 
 Creative Commons (CC BY-NC-SA 4.0)
 
-[![Star History Chart](https://api.star-history.com/svg?repos=chi111i/BypassAIGC&type=Date)](https://star-history.com/#chi111i/BypassAIGC)
+## Star
 
+[![GitHub stars](https://img.shields.io/github/stars/chi111i/BypassAIGC?logo=github)](https://github.com/chi111i/BypassAIGC/stargazers)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+增长曲线见 [star-history](https://www.star-history.com/#chi111i/BypassAIGC&Date)。

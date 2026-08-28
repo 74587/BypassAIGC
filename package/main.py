@@ -57,9 +57,8 @@ from app.database import init_db
 from app.routes import admin, prompts, optimization
 from app.word_formatter import router as word_formatter_router
 from app.word_formatter.services import get_job_manager
-from app.models.models import CustomPrompt
 from app.database import SessionLocal
-from app.services.ai_service import get_default_polish_prompt, get_default_enhance_prompt
+from app.services.ai_service import ensure_system_prompts
 
 # 检查默认密钥（仅警告，不退出）
 if settings.SECRET_KEY == "your-secret-key-change-this-in-production":
@@ -130,41 +129,9 @@ async def startup_event():
     # 初始化数据库
     init_db()
     
-    # 创建系统默认提示词
     db = SessionLocal()
     try:
-        # 检查是否已存在系统提示词
-        polish_prompt = db.query(CustomPrompt).filter(
-            CustomPrompt.is_system.is_(True),
-            CustomPrompt.stage == "polish"
-        ).first()
-        
-        if not polish_prompt:
-            polish_prompt = CustomPrompt(
-                name="默认润色提示词",
-                stage="polish",
-                content=get_default_polish_prompt(),
-                is_default=True,
-                is_system=True
-            )
-            db.add(polish_prompt)
-        
-        enhance_prompt = db.query(CustomPrompt).filter(
-            CustomPrompt.is_system.is_(True),
-            CustomPrompt.stage == "enhance"
-        ).first()
-        
-        if not enhance_prompt:
-            enhance_prompt = CustomPrompt(
-                name="默认增强提示词",
-                stage="enhance",
-                content=get_default_enhance_prompt(),
-                is_default=True,
-                is_system=True
-            )
-            db.add(enhance_prompt)
-        
-        db.commit()
+        ensure_system_prompts(db)
     finally:
         db.close()
 
