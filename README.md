@@ -224,6 +224,4 @@ Creative Commons (CC BY-NC-SA 4.0)
 
 ## Star
 
-[![GitHub stars](https://img.shields.io/github/stars/chi111i/BypassAIGC?logo=github)](https://github.com/chi111i/BypassAIGC/stargazers)
-
-增长曲线见 [star-history](https://www.star-history.com/#chi111i/BypassAIGC&Date)。
+[![Star History Chart](https://star-history.dera.page/svg?repos=chi111i/BypassAIGC&type=Date)](https://star-history.dera.page/#chi111i/BypassAIGC&type=Date)
